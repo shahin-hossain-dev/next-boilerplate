@@ -12,12 +12,8 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
+
+
 
 .text-icon {
   @apply !text-[1.1rem];
@@ -26,3 +22,22 @@
 /* .ant-input {
   @apply focus:!outline-2 focus:!border-0;
 } */
+
+@theme inline {
+}
+
+@utility flex-center {
+  @apply flex justify-center items-center;
+}
+
+.auth-container {
+  @apply h-screen flex-center;
+
+  .auth-body {
+    @apply p-4 lg:p-8 rounded-2xl w-[80%] md:w-[50%] lg:w-[35%] mx-auto;
+  }
+
+  h2 {
+    @apply text-xl font-semibold lg:text-2xl;
+  }
+}

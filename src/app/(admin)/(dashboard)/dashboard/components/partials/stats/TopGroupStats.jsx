@@ -39,7 +39,7 @@ const stats = [
 
 const TopGroupStats = () => {
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-3">
       {stats?.map((stat, idx) => (
         <Card key={idx} className="!shadow">
           <div className="flex items-start gap-3 ">
