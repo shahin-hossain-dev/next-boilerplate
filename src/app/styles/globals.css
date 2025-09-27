@@ -23,6 +23,12 @@
   @apply focus:!outline-2 focus:!border-0;
 } */
 
+body {
+  font-size: 0.9375rem;
+  line-height: 1.46667;
+  font-weight: 400;
+}
+
 @theme inline {
 }
 
@@ -40,4 +46,13 @@
   h2 {
     @apply text-xl font-semibold lg:text-2xl;
   }
+}
+
+.sidebar {
+  .text-icon {
+    @apply !text-[1.2rem];
+  }
+  /* .ant-menu-submenu-arrow {
+    @apply before:!w-[13px]  after:!w-[13px] ;
+  } */
 }

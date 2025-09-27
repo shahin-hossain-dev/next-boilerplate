@@ -69,60 +69,131 @@ const Sidebar = () => {
   };
 
   const items = [
-    getItem(
-      "Dashboard",
-      "1",
-      <RiDashboardHorizontalFill className="text-icon" />
-    ),
-    getItem("Products", "sub1", <AiFillProduct className="text-icon" />, [
-      getItem("Product", "2", <MdAddShoppingCart className="text-icon" />),
-      getItem("Category", "5", <MdOutlineCategory className="text-icon" />),
-      getItem("Attribute", "4", <MdEditAttributes className="text-icon" />),
-      getItem("Attribute Option", "3", <LuDot className="-ml-4 text-icon" />),
-    ]),
-    getItem("Orders", "sub2", <HiShoppingCart className="text-icon" />, [
-      getItem("Order", "6", <FaCartPlus className="text-icon" />),
-      getItem("Wishlist", "7", <FaRegHeart className="text-icon" />),
-      getItem("Cart", "8", <BsCartCheck className="text-icon" />),
-      getItem("Coupon", "9", <RiCoupon3Line className="text-icon" />),
-      getItem("Gift Card", "10", <FaGift className="text-icon" />),
-    ]),
-    getItem("Blog", "11", <FaBlogger className="text-icon " />),
-    getItem("Gallery", "12", <MdPhotoLibrary className="text-icon" />),
-    getItem("Review", "13", <MdRateReview className="text-icon" />),
-    getItem("Slider", "14", <BiSlideshow className="text-icon" />),
-    getItem("User", "15", <CgUserList className="text-icon" />),
-    getItem("Account Setting", "16", <FaUserCog className="text-icon" />),
-    getItem("Global Setting", "17", <FiSettings className="text-icon" />),
+    {
+      key: "1",
+      label: "Dashboard",
+      icon: <RiDashboardHorizontalFill className="text-icon" />,
+    },
+    {
+      key: "sub1",
+      label: "Products",
+      icon: <AiFillProduct className="text-icon" />,
+
+      children: [
+        {
+          key: "2",
+          label: "Product",
+          icon: <MdAddShoppingCart className="text-icon" />,
+        },
+        {
+          key: "5",
+          label: "Category",
+          icon: <MdOutlineCategory className="text-icon" />,
+        },
+        {
+          key: "4",
+          label: "Attribute",
+          icon: <MdEditAttributes className="text-icon" />,
+        },
+        {
+          key: "3",
+          label: "Attribute Option",
+          icon: <LuDot className="-ml-4 text-icon" />,
+        },
+      ],
+    },
+    {
+      key: "sub2",
+      label: "Orders",
+      icon: <HiShoppingCart className="text-icon" />,
+      children: [
+        {
+          key: "6",
+          label: "Order",
+          icon: <FaCartPlus className="text-icon" />,
+        },
+        {
+          key: "7",
+          label: "Wishlist",
+          icon: <FaRegHeart className="text-icon" />,
+        },
+        {
+          key: "8",
+          label: "Cart",
+          icon: <BsCartCheck className="text-icon" />,
+        },
+        {
+          key: "9",
+          label: "Coupon",
+          icon: <RiCoupon3Line className="text-icon" />,
+        },
+        {
+          key: "10",
+          label: "Gift Card",
+          icon: <FaGift className="text-icon" />,
+        },
+      ],
+    },
+    { key: "11", label: "Blog", icon: <FaBlogger className="text-icon" /> },
+    {
+      key: "12",
+      label: "Gallery",
+      icon: <MdPhotoLibrary className="text-icon" />,
+    },
+    {
+      key: "13",
+      label: "Review",
+      icon: <MdRateReview className="text-icon" />,
+    },
+    { key: "14", label: "Slider", icon: <BiSlideshow className="text-icon" /> },
+    { key: "15", label: "User", icon: <CgUserList className="text-icon" /> },
+    {
+      key: "16",
+      label: "Account Setting",
+      icon: <FaUserCog className="text-icon" />,
+    },
+    {
+      key: "17",
+      label: "Global Setting",
+      icon: <FiSettings className="text-icon" />,
+    },
   ];
+
   return (
-    <Sider
-      breakpoint="lg"
-      style={{ minHeight: "100vh" }}
-      className="!absolute lg:!static !z-50"
-      theme="light"
-      collapsedWidth="0"
-      onBreakpoint={(broken) => {
-        console.log(broken);
-      }}
-      onCollapse={(collapsed, type) => {
-        console.log(collapsed, type);
-      }}
+    <div
+      className="sidebar"
+      style={{ display: "flex", flexDirection: "column" }}
     >
-      <div>
-        <h2 className="demo-logo-vertical text-dark font-bold text-lg md:text-xl lg:text-2xl px-2 py-2 text-center">
-          Dash Logo
-        </h2>
-      </div>
-      <Menu
-        onClick={handleNavigateRoutes}
-        theme="light"
-        mode="inline"
-        defaultSelectedKeys={["1"]}
-        items={items}
-        className="font-bold !text-[.887rem]"
-      />
-    </Sider>
+      <Sider
+        breakpoint="lg"
+        width={250}
+        style={{ minHeight: "100vh", position: "sticky", top: 0, left: 0 }}
+        className="!absolute lg:!sticky !z-50 "
+        theme="dark"
+        collapsedWidth="0"
+        onBreakpoint={(broken) => {
+          console.log(broken);
+        }}
+        onCollapse={(collapsed, type) => {
+          console.log(collapsed, type);
+        }}
+      >
+        <div>
+          <h2 className="demo-logo-vertical text-white font-bold text-lg md:text-xl lg:text-2xl px-2 py-2 text-center">
+            Dash Logo
+          </h2>
+        </div>
+        <Menu
+          onClick={handleNavigateRoutes}
+          theme="dark"
+          style={{ backgroundColor: "#2F3349" }}
+          mode="inline"
+          defaultSelectedKeys={["1"]}
+          items={items}
+          className="!text-[1rem]"
+        />
+      </Sider>
+    </div>
   );
 };
 

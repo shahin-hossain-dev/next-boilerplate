@@ -1,25 +1,25 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Public_Sans } from "next/font/google";
 import "antd/dist/reset.css";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "@ant-design/v5-patch-for-react-19";
 import "./styles/globals.css";
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import ThemeContextProvider from "@/contexts/ThemeContext";
+import ReduxStoreProvider from "@/contexts/ReduxStoreProvider";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const publicSanse = Public_Sans({
+  variable: "--font-public-sans",
   subsets: ["latin"],
 });
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <AntdRegistry>{children}</AntdRegistry>
+      <body className={`${publicSanse.variable}  antialiased`}>
+        <AntdRegistry>
+          <ReduxStoreProvider>
+            <ThemeContextProvider>{children}</ThemeContextProvider>
+          </ReduxStoreProvider>
+        </AntdRegistry>
       </body>
     </html>
   );
