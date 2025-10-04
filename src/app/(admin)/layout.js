@@ -1,7 +1,7 @@
 "use client";
 import "antd/dist/reset.css";
 import "@ant-design/v5-patch-for-react-19";
-import "../../styles/globals.css";
+import "../styles/globals.css";
 import dynamic from "next/dynamic";
 
 const DashboardRoot = dynamic(
