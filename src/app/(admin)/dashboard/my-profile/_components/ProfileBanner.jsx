@@ -7,7 +7,7 @@ import Button from "../../components/ui/Button";
 const bannerImg = "/images/banner/profile-banner.png";
 const profileImg = "/images/user.png";
 
-const ProfileBanner = () => {
+const ProfileBanner = ({ handleDrawerOpen }) => {
   const bannerStyles = {
     backgroundImage: `url(${bannerImg})`,
     backgroundPosition: "center",
@@ -44,7 +44,9 @@ const ProfileBanner = () => {
           </div>
         </div>
         <div className="absolute right-3 top-2 lg:top-1/2 lg:-translate-y-1/2">
-          <Button type="primary">Edit Profile</Button>
+          <Button onClick={handleDrawerOpen} type="primary">
+            Edit Profile
+          </Button>
         </div>
       </div>
     </div>
