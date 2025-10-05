@@ -1,7 +1,8 @@
-import { Button, Card } from "antd";
+import { Button } from "antd";
 import React from "react";
 import ChartByDate from "./ChartByDate";
 import OrderBarChart from "./OrderBarChart";
+import Card from "../../ui/Card";
 
 const HomeGroupChart = () => {
   return (

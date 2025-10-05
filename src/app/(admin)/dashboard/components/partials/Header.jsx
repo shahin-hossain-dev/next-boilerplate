@@ -24,7 +24,7 @@ const LinkItem = ({ title, icon: Icon }) => {
 const items = [
   {
     label: (
-      <Link href="/my-profile" rel="noopener noreferrer">
+      <Link href="/dashboard/my-profile" rel="noopener noreferrer">
         <span className="flex gap-2 items-center">
           <LinkItem title={"My Profile"} icon={FaRegUser} />
         </span>

@@ -1,6 +1,5 @@
-import { Card } from "antd";
-
 import Image from "next/image";
+import Card from "../../ui/Card";
 const productIcon = "/images/icons/products.png";
 const orderIcon = "/images/icons/order.png";
 const usersIcon = "/images/icons/users.webp";
